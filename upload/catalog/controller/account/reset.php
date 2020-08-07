@@ -16,7 +16,7 @@ class ControllerAccountReset extends Controller {
 		}
 
 		if (isset($this->request->get['code'])) {
-			$code = $this->request->get['code'];
+			$code = str_replace(array("\n\r", "\n", "\r"), '',$this->request->get['code']);
 		} else {
 			$code = '';
 		}
